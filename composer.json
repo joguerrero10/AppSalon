@@ -1,0 +1,22 @@
+{
+    "name": "nathalie/appsalon",
+    "description": "app web para agendar citas para hacerse las unas",
+    "type": "project",
+    "autolad":{
+        "psr-4":{
+              "MVC\\" : "./",
+              "Controllers\\":"./Controllers",
+              "Model\\":"./models"
+              
+        }
+    },
+    "authors":
+    [
+         {"name": "NathalieArroyaves",
+          "email": "nathalie.arroyavez@gmail.com"
+         }
+        
+    ],
+
+    "require": {}
+}
