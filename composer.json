@@ -2,12 +2,11 @@
     "name": "nathalie/appsalon",
     "description": "app web para agendar citas para hacerse las unas",
     "type": "project",
-    "autoload":{
-        "psr-4":{
-              "MVC\\" : "./",
-              "Controllers\\":"./controllers",
-              "Model\\":"./models"
-              
+    "autoload": {
+        "psr-4": {
+        "MVC\\" : "./",
+        "Controllers\\" : "./controllers",
+        "Model\\" : "./models"
         }
     },
     "authors":
