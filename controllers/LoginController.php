@@ -2,25 +2,25 @@
 
 namespace Controllers;
 
-class LoginController {
-    public static function login() 
+class LoginController
+{
+    public static function login()
     {
-        echo"Desde login";
+        echo "Desde login";
     }
 
-    public static function logout() 
+    public static function logout()
     {
-        echo"Desde logout";
+        echo "Desde logout";
     }
 
-    public static function olvide() 
+    public static function olvide()
     {
         echo "Desde olvide";
     }
-    
-    public static function recuperar() 
+
+    public static function recuperar()
     {
         echo "Desde recuperar";
     }
 }
-
