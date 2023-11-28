@@ -1,11 +1,14 @@
 <?php
+$servername = "localhost";
+$username = "root";
+$password = ""; // Si la contraseña está vacía, déjala así
 
-$db = mysqli_connect('localhost', 'root', '', '');
-
-
-if (!$db) {
-    echo "Error: No se pudo conectar a MySQL.";
-    echo "errno de depuración: " . mysqli_connect_errno();
-    echo "error de depuración: " . mysqli_connect_error();
-    exit;
+try {
+    $conn = new PDO("mysql:host=$servername", $username, $password);
+    // Establecer el modo de error de PDO en excepción
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo "Conexión exitosa";
+} catch(PDOException $e) {
+    echo "Error en la conexión: " . $e->getMessage();
 }
+?>
