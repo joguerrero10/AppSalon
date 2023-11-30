@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$databasename = "blackninja";
+$databasename = "salon";
 $port = 3306;
 
 try {
