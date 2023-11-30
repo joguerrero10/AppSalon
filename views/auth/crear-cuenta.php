@@ -28,6 +28,16 @@
     </div>
 
     <div class="campo">
+        <label for="telefono">Teléfono</label>
+        <input type="tel"
+        id="telefono"
+        name="telefono"
+        placeholder="Tu Teléfono"
+        value="<?php echo s($usuario->telefono);?>"
+        >
+    </div>
+
+    <div class="campo">
         <label for="email">E-mail</label>
         <input type="email"
         id="email"
