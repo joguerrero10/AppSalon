@@ -1,6 +1,7 @@
 <?php
 
 namespace Controllers;
+
 use Model\Usuario;
 use MVC\Router;
 
@@ -25,31 +26,29 @@ class LoginController
 
     public static function recuperar(Router $router)
     {
-        
+
         //echo "Desde recuperar";
     }
 
-    public static function crear(Router $router) {
-        
+    public static function crear(Router $router)
+    {
+
         $usuario = new Usuario;
 
         // Alertas Vacias
         $alertas = [];
-        if($_SERVER["REQUEST_METHOD"] === "POST") {
+        if ($_SERVER["REQUEST_METHOD"] === "POST") {
             //echo "Enviaste el formulario";
-            
-            
+
+
             $usuario->sincronizar($_POST);
             $alertas = $usuario->validarNuevaCuenta();
-
-            
         }
 
-        $router->render("auth/crear-cuenta",[ 
+        $router->render("auth/crear-cuenta", [
             "usuario" => $usuario,
             "alertas" => $alertas
         ]);
         //echo"Desde Crear";
     }
-
 }
