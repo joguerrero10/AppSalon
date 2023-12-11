@@ -40,10 +40,35 @@ class Usuario extends ActiveRecord {
         if(!$this->apellido){
             self::$alertas ["error"][] = "El Apellido del cliente es Obligatorio";
         }
-
+        if(!$this->email){
+            self::$alertas ["error"][] = "El Email del cliente es Obligatorio";
+        }
+        if(!$this->password){
+            self::$alertas ["error"][] = "El Password del cliente es Obligatorio";
+        }
+        if(strlen($this->password) < 6){
+            self ::$alertas["error"][] = "El Password debe contener al menos 6 caracteres";
+        }
         return self::$alertas;
     }
 
+    //Revisa si el usuario ya existe
+    public function existeUsuario(){
+        $query = " SELECT * FROM " . self::$tabla . " WHERE email ='" . $this->email . "' LIMIT
+        1";
+        $resultado = self :: $db->query($query);
 
+        if($resultado->num_rows){
+            self::$alertas["error"][] = "El usuario ya esta registrado";
+        }
+        return $resultado;
+    }
 
+    public function hashPassword(){
+        $this->password = password_hash($this->password, PASSWORD_BCRYPT); 
+    }
+
+    public function crearToken(){
+        $this->token = uniqid();
+    }
 }
